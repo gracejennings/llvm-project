@@ -1157,6 +1157,11 @@ public:
 
   CXXThisExpr(EmptyShell Empty) : Expr(CXXThisExprClass, Empty) {}
 
+  static CXXThisExpr *Create(const ASTContext &C, SourceLocation Loc,
+                             QualType Ty, bool IsImplicit) {
+    return new (C) CXXThisExpr(Loc, Ty, IsImplicit);
+  }
+
   SourceLocation getLocation() const { return CXXThisExprBits.Loc; }
   void setLocation(SourceLocation L) { CXXThisExprBits.Loc = L; }
 
