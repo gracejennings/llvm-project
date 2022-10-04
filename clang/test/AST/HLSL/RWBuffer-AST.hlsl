@@ -47,7 +47,7 @@ RWBuffer<float> Buffer;
 // CHECK-NEXT: ReturnStmt 0x{{[0-9A-Fa-f]+}} <<invalid sloc>>
 // CHECK-NEXT: ArraySubscriptExpr 0x{{[0-9A-Fa-f]+}} <<invalid sloc>> 'element_type' lvalue
 // CHECK-NEXT: MemberExpr 0x{{[0-9A-Fa-f]+}} <<invalid sloc>> 'element_type *' lvalue ->h 0x{{[0-9A-Fa-f]+}}
-// CHECK-NEXT: CXXThisExpr 0x{{[0-9A-Fa-f]+}} <<invalid sloc>> 'const RWBuffer<element_type> *' implicit this
+// CHECK-NEXT: CXXThisExpr 0x{{[0-9A-Fa-f]+}} <<invalid sloc>> 'const RWBuffer<element_type> *' lvalue implicit this
 // CHECK-NEXT: DeclRefExpr 0x{{[0-9A-Fa-f]+}} <<invalid sloc>> 'unsigned int' ParmVar 0x{{[0-9A-Fa-f]+}} 'Idx' 'unsigned int'
 // CHECK-NEXT: AlwaysInlineAttr 0x{{[0-9A-Fa-f]+}} <<invalid sloc>> Implicit always_inline
 
@@ -57,7 +57,7 @@ RWBuffer<float> Buffer;
 // CHECK-NEXT: ReturnStmt 0x{{[0-9A-Fa-f]+}} <<invalid sloc>>
 // CHECK-NEXT: ArraySubscriptExpr 0x{{[0-9A-Fa-f]+}} <<invalid sloc>> 'element_type' lvalue
 // CHECK-NEXT: MemberExpr 0x{{[0-9A-Fa-f]+}} <<invalid sloc>> 'element_type *' lvalue ->h 0x{{[0-9A-Fa-f]+}}
-// CHECK-NEXT: CXXThisExpr 0x{{[0-9A-Fa-f]+}} <<invalid sloc>> 'RWBuffer<element_type> *' implicit this
+// CHECK-NEXT: CXXThisExpr 0x{{[0-9A-Fa-f]+}} <<invalid sloc>> 'RWBuffer<element_type> *' lvalue implicit this
 // CHECK-NEXT: DeclRefExpr 0x{{[0-9A-Fa-f]+}} <<invalid sloc>> 'unsigned int' ParmVar 0x{{[0-9A-Fa-f]+}} 'Idx' 'unsigned int'
 // CHECK-NEXT: AlwaysInlineAttr 0x{{[0-9A-Fa-f]+}} <<invalid sloc>> Implicit always_inline
 
