@@ -175,8 +175,8 @@ struct BuiltinTypeDeclBuilder {
     Expr *Call = CallExpr::Create(AST, Fn, {RCExpr}, AST.VoidPtrTy, VK_PRValue,
                                   SourceLocation(), FPOptionsOverride());
 
-    CXXThisExpr *This = CXXThisExpr::Create(
-        AST, SourceLocation(),
+    CXXThisExpr *This = new (AST) CXXThisExpr(
+        SourceLocation(),
         Constructor->getThisType().getTypePtr()->getPointeeType(), true);
     This->setValueKind(ExprValueKind::VK_LValue);
     Expr *Handle = MemberExpr::CreateImplicit(AST, This, false, Fields["h"],
@@ -262,8 +262,8 @@ struct BuiltinTypeDeclBuilder {
     auto FnProtoLoc = TSInfo->getTypeLoc().getAs<FunctionProtoTypeLoc>();
     FnProtoLoc.setParam(0, IdxParam);
 
-    auto *This = CXXThisExpr::Create(
-        AST, SourceLocation(),
+    auto *This = new (AST) CXXThisExpr(
+        SourceLocation(),
         MethodDecl->getThisType().getTypePtr()->getPointeeType(), true);
     This->setValueKind(ExprValueKind::VK_LValue);
     auto *HandleAccess = MemberExpr::CreateImplicit(
